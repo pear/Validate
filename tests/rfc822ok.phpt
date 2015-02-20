@@ -1,6 +1,5 @@
 --TEST--
 Tests for rfc822 emails (well-formed)
-$Id$
 --ARGS--
 2>&1 <<VALIDS
 abigail@example.com

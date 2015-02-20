@@ -1,6 +1,5 @@
 --TEST--
 Tests for rfc822 emails (malformed)
-$Id$
 --ARGS--
 2>&1 <<INVALIDS
 Just a string
