@@ -1,4 +1,13 @@
 {
+    "name": "pear/validate",
+    "description": "Validate numbers, email, strings, dates, URIs and more",
+    "license": "New BSD",
+    "homepage": "http://pear.php.net/package/Validate",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Validate",
+        "source": "https://github.com/pear/Validate"
+    },
+    "type": "library",
     "authors": [
         {
             "email": "pierre.php@gmail.com",
@@ -41,23 +50,9 @@
             "Validate": "./"
         }
     },
-    "description": "More info available on: http://pear.php.net/package/Validate",
     "include-path": [
         "./"
     ],
-    "license": "New BSD",
-    "name": "pear/validate",
-    "support": {
-        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Validate",
-        "source": "https://github.com/pear/Validate"
-    },
-    "type": "library",
-    "require": {
-        "pear/pear_exception": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*"
-    },
     "suggest": {
         "pear/date": "Install optionally via your project's composer.json"
     }
