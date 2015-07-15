@@ -3,7 +3,7 @@
 --FILE--
 <?php
 require_once 'Validate.php';
-$validate = & new Validate();
+$validate = new Validate();
 $time = "aa:aa";
 if (!$validate->date($time,array("format"=>"%h:%i"))) {
     echo "Ok";
