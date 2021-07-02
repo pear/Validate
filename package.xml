@@ -58,10 +58,10 @@
   <email>pear.neufeind@speedpartner.de</email>
   <active>no</active>
  </developer>
- <date>2010-10-10</date>
- <time>06:13:30</time>
+ <date>2021-07-02</date>
+ <time>18:24:30</time>
  <version>
-  <release>0.8.5</release>
+  <release>0.8.6</release>
   <api>0.7.0</api>
  </version>
  <stability>
@@ -71,10 +71,14 @@
  <license>New BSD</license>
  <notes>
 QA Release
-Request #17963: Allow test suite to run without DNS resolver [patch by remicollet, adjustments by dufuz]
-Bug #17279 Validate::email() with 'fullTLDValidation' => 'true' always return false.
-Bug #17947 testdate test fails if date.timezone not set
-Bug #17948 multicard test fails
+Attempt to fix RFC822 behaviour for mismatched braces
+Enhancement: composer setup
+Make tests run on PHP 7
+Fix PHP 8 compatibility.
+Fix test to be skipped if PEAR::Date dependency is missing.
+Remove some broken unit tests
+Separate the date() check and date() check that requires PEAR::Date
+Use correct SPDX license identifier
 </notes>
  <contents>
   <dir name="/">
@@ -120,6 +124,26 @@ Bug #17948 multicard test fails
  </dependencies>
  <phprelease />
  <changelog>
+  <release>
+ <date>2010-10-10</date>
+ <time>06:13:30</time>
+ <version>
+  <release>0.8.5</release>
+  <api>0.7.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>New BSD</license>
+ <notes>
+QA Release
+Request #17963: Allow test suite to run without DNS resolver [patch by remicollet, adjustments by dufuz]
+Bug #17279 Validate::email() with 'fullTLDValidation' => 'true' always return false.
+Bug #17947 testdate test fails if date.timezone not set
+Bug #17948 multicard test fails
+</notes>
+  </release>
   <release>
  <date>2010-10-10</date>
  <time>06:13:30</time>
