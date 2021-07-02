@@ -91,7 +91,7 @@ class Validate
      * @access protected
      * @var    array     $_iTld (International top-level domains)
      */
-    var $_itld = array(
+    protected $_itld = array(
         'arpa',
         'root',
     );
@@ -105,7 +105,7 @@ class Validate
      * @access protected
      * @var    array     $_gTld (Generic top-level domains)
      */
-    var $_gtld = array(
+    protected $_gtld = array(
         'aero',
         'biz',
         'cat',
@@ -139,7 +139,7 @@ class Validate
      * @access protected
      * @var    array     $_ccTld (Country Code Top-Level Domain)
      */
-    var $_cctld = array(
+    protected $_cctld = array(
         'ac',
         'ad','ae','af','ag',
         'ai','al','am','an',
@@ -216,7 +216,7 @@ class Validate
      *
      * @access private
      */
-    function __uriRFC4151($uri)
+    private static function __uriRFC4151($uri)
     {
         $datevalid = false;
         if (preg_match(
@@ -257,7 +257,7 @@ class Validate
      *
      * @access public
      */
-    function number($number, $options = array())
+    public static function number($number, $options = array())
     {
         $decimal = $dec_prec = $min = $max = null;
         if (is_array($options)) {
@@ -295,7 +295,7 @@ class Validate
      *
      * @access  private
      */
-    function __stringToUtf7($string)
+    private static function __stringToUtf7($string)
     {
         $return = '';
         $utf7   = array(
@@ -373,7 +373,7 @@ class Validate
      *
      * @access private
      */
-    function __emailRFC822(&$email, &$options)
+    private static function __emailRFC822(&$email, &$options)
     {
         static $address   = null;
         static $uncomment = null;
@@ -442,7 +442,7 @@ class Validate
      *
      * @return bool True if validating succeeds
      */
-    function _fullTLDValidation($email, $options)
+    protected static function _fullTLDValidation($email, $options)
     {
         $validate = array();
         if(!empty($options["VALIDATE_ITLD_EMAILS"])) array_push($validate, 'itld');
@@ -481,7 +481,7 @@ class Validate
      *
      * @return true or false (Depending on if it validates or if it does not)
      */
-    function executeFullEmailValidation($email, $arrayOfTLDs)
+    public function executeFullEmailValidation($email, $arrayOfTLDs)
     {
         $emailEnding = explode('.', $email);
         $emailEnding = $emailEnding[count($emailEnding)-1];
@@ -516,7 +516,7 @@ class Validate
      *
      * @access public
      */
-    function email($email, $options = null)
+    public static function email($email, $options = null)
     {
         $check_domain = false;
         $use_rfc822   = false;
@@ -609,7 +609,7 @@ class Validate
      *
      * @access public
      */
-    function string($string, $options)
+    public static function string($string, $options)
     {
         $format     = null;
         $min_length = 0;
@@ -671,7 +671,7 @@ class Validate
      *
      * @access public
      */
-    function uri($url, $options = null)
+    public static function uri($url, $options = null)
     {
         $strict = ';/?:@$,';
         $domain_check = false;
@@ -747,7 +747,7 @@ class Validate
      *
      * @access public
      */
-    function date($date, $options)
+    public static function date($date, $options)
     {
         $max    = false;
         $min    = false;
@@ -790,9 +790,9 @@ class Validate
         } else {
             $date_len = strlen($format);
             for ($i = 0; $i < $date_len; $i++) {
-                $c = $format{$i};
+                $c = $format[$i];
                 if ($c == '%') {
-                    $next = $format{$i + 1};
+                    $next = $format[$i + 1];
                     switch ($next) {
                     case 'j':
                     case 'd':
@@ -930,7 +930,7 @@ class Validate
      * @access private
      * @return string
      */
-    function _substr(&$date, $num, $opt = false)
+    private static function _substr(&$date, $num, $opt = false)
     {
         if ($opt && strlen($date) >= $opt && preg_match('/^[0-9]{'.$opt.'}/', $date, $m)) {
             $ret = $m[0];
@@ -963,7 +963,7 @@ class Validate
      *
      * @return int returns product of number digits with weights
      */
-    function _multWeights($number, &$weights)
+    protected static function _multWeights($number, &$weights)
     {
         if (!is_array($weights)) {
             return -1;
@@ -994,7 +994,7 @@ class Validate
      *
      * @return  int -1 calculated control number is returned
      */
-    function _getControlNumber($number, &$weights, $modulo = 10, $subtract = 0, $allow_high = false)
+    protected static function _getControlNumber($number, &$weights, $modulo = 10, $subtract = 0, $allow_high = false)
     {
         // calc sum
         $sum = Validate::_multWeights($number, $weights);
@@ -1024,7 +1024,7 @@ class Validate
      *
      * @return  bool true if valid, false if not
      */
-    function _checkControlNumber($number, &$weights, $modulo = 10, $subtract = 0)
+    protected static function _checkControlNumber($number, &$weights, $modulo = 10, $subtract = 0)
     {
         if (strlen($number) < count($weights)) {
             return false;
@@ -1061,7 +1061,7 @@ class Validate
      *
      * @access public
      */
-    function multiple(&$data, &$val_type, $remove = false)
+    public static function multiple(&$data, &$val_type, $remove = false)
     {
         $keys  = array_keys($data);
         $valid = array();
@@ -1136,15 +1136,15 @@ class Validate
      *
      * @return bool true if file exists
      */
-    function _includePathFileExists($filename)
+    private static function _includePathFileExists($filename)
     {
         $paths = explode(":", ini_get("include_path"));
-        $result = false;
-
-        while ((!($result)) && (list($key,$val) = each($paths))) {
-            $result = file_exists($val . "/" . $filename);
+        foreach ($paths as $val) {
+            if ($result = file_exists($val . "/" . $filename)) {
+                return $result;
+            }
         }
-        return $result;
+        return false;
     }
 }
 
