@@ -2,6 +2,12 @@
 testdate.phpt: Unit tests for 'Validate.php'
 --INI--
 date.timezone=UTC
+--SKIPIF--
+<?php
+if (!@include 'Date/Calc.php') {
+  echo 'skip Requires PEAR::Date';
+}
+?>
 --FILE--
 <?php
 // $Id$
