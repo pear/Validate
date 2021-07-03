@@ -25,15 +25,15 @@
  *   - uri (RFC2396)
  *   - possibility valid multiple data with a single method call (::multiple)
  *
- * @category   Validate
- * @package    Validate
- * @author     Tomas V.V.Cox <cox@idecnet.com>
- * @author     Pierre-Alain Joye <pajoye@php.net>
- * @author     Amir Mohammad Saied <amir@php.net>
- * @copyright  1997-2006 Pierre-Alain Joye,Tomas V.V.Cox,Amir Mohammad Saied
- * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    CVS: $Id$
- * @link       http://pear.php.net/package/Validate
+ * @category  Validate
+ * @package   Validate
+ * @author    Tomas V.V.Cox <cox@idecnet.com>
+ * @author    Pierre-Alain Joye <pajoye@php.net>
+ * @author    Amir Mohammad Saied <amir@php.net>
+ * @copyright 1997-2006 Pierre-Alain Joye,Tomas V.V.Cox,Amir Mohammad Saied
+ * @license   http://www.opensource.org/licenses/bsd-license.php  New BSD License
+ * @version   CVS: $Id$
+ * @link      http://pear.php.net/package/Validate
  */
 
 // {{{ Constants
@@ -140,70 +140,37 @@ class Validate
      * @var    array     $_ccTld (Country Code Top-Level Domain)
      */
     protected $_cctld = array(
-        'ac',
-        'ad','ae','af','ag',
-        'ai','al','am','an',
-        'ao','aq','ar','as',
-        'at','au','aw','ax',
-        'az','ba','bb','bd',
-        'be','bf','bg','bh',
-        'bi','bj','bm','bn',
-        'bo','br','bs','bt',
-        'bu','bv','bw','by',
-        'bz','ca','cc','cd',
-        'cf','cg','ch','ci',
-        'ck','cl','cm','cn',
-        'co','cr','cs','cu',
-        'cv','cx','cy','cz',
-        'de','dj','dk','dm',
-        'do','dz','ec','ee',
-        'eg','eh','er','es',
-        'et','eu','fi','fj',
-        'fk','fm','fo','fr',
-        'ga','gb','gd','ge',
-        'gf','gg','gh','gi',
-        'gl','gm','gn','gp',
-        'gq','gr','gs','gt',
-        'gu','gw','gy','hk',
-        'hm','hn','hr','ht',
-        'hu','id','ie','il',
-        'im','in','io','iq',
-        'ir','is','it','je',
-        'jm','jo','jp','ke',
-        'kg','kh','ki','km',
-        'kn','kp','kr','kw',
-        'ky','kz','la','lb',
-        'lc','li','lk','lr',
-        'ls','lt','lu','lv',
-        'ly','ma','mc','md',
-        'me','mg','mh','mk',
-        'ml','mm','mn','mo',
-        'mp','mq','mr','ms',
-        'mt','mu','mv','mw',
-        'mx','my','mz','na',
-        'nc','ne','nf','ng',
-        'ni','nl','no','np',
-        'nr','nu','nz','om',
-        'pa','pe','pf','pg',
-        'ph','pk','pl','pm',
-        'pn','pr','ps','pt',
-        'pw','py','qa','re',
-        'ro','rs','ru','rw',
-        'sa','sb','sc','sd',
-        'se','sg','sh','si',
-        'sj','sk','sl','sm',
-        'sn','so','sr','st',
-        'su','sv','sy','sz',
-        'tc','td','tf','tg',
-        'th','tj','tk','tl',
-        'tm','tn','to','tp',
-        'tr','tt','tv','tw',
-        'tz','ua','ug','uk',
-        'us','uy','uz','va',
-        'vc','ve','vg','vi',
-        'vn','vu','wf','ws',
-        'ye','yt','yu','za',
-        'zm','zw',
+        '.ac', '.ad', '.ae', '.af', '.ag', '.ai', '.al', '.am',
+        '.ao', '.aq', '.ar', '.as', '.at', '.au', '.aw', '.ax',
+        '.az', '.ba', '.bb', '.bd', '.be', '.bf', '.bg', '.bh',
+        '.bi', '.bj', '.bm', '.bn', '.bo', '.bq', '.br', '.bs',
+        '.bt', '.bw', '.by', '.bz', '.ca', '.cc', '.cd', '.cf',
+        '.cg', '.ch', '.ci', '.ck', '.cl', '.cm', '.cn', '.co',
+        '.cr', '.cu', '.cv', '.cw', '.cx', '.cy', '.cz', '.de',
+        '.dj', '.dk', '.dm', '.do', '.dz', '.ec', '.ee', '.eg',
+        '.eh', '.er', '.es', '.et', '.eu', '.fi', '.fj', '.fk',
+        '.fm', '.fo', '.fr', '.ga', '.gd', '.ge', '.gf', '.gg',
+        '.gh', '.gi', '.gl', '.gm', '.gn', '.gp', '.gq', '.gr',
+        '.gs', '.gt', '.gu', '.gw', '.gy', '.hk', '.hm', '.hn',
+        '.hr', '.ht', '.hu', '.id', '.ie', '.il', '.im', '.in',
+        '.io', '.iq', '.ir', '.is', '.it', '.je', '.jm', '.jo',
+        '.jp', '.ke', '.kg', '.kh', '.ki', '.km', '.kn', '.kp',
+        '.kr', '.kw', '.ky', '.kz', '.la', '.lb', '.lc', '.li',
+        '.lk', '.lr', '.ls', '.lt', '.lu', '.lv', '.ly', '.ma',
+        '.mc', '.md', '.me', '.mg', '.mh', '.mk', '.ml', '.mm',
+        '.mn', '.mo', '.mp', '.mq', '.mr', '.ms', '.mt', '.mu',
+        '.mv', '.mw', '.mx', '.my', '.mz', '.na', '.nc', '.ne',
+        '.nf', '.ng', '.ni', '.nl', '.no', '.np', '.nr', '.nu',
+        '.nz', '.om', '.pa', '.pe', '.pf', '.pg', '.ph', '.pk',
+        '.pl', '.pm', '.pn', '.pr', '.ps', '.pt', '.pw', '.py',
+        '.qa', '.re', '.ro', '.rs', '.ru', '.rw', '.sa', '.sb',
+        '.sc', '.sd', '.se', '.sg', '.sh', '.si', '.sk', '.sl',
+        '.sm', '.sn', '.so', '.sr', '.ss', '.st', '.su', '.sv',
+        '.sx', '.sy', '.sz', '.tc', '.td', '.tf', '.tg', '.th',
+        '.tj', '.tk', '.tl', '.tm', '.tn', '.to', '.tr', '.tt',
+        '.tv', '.tz', '.ua', '.ug', '.uk', '.us', '.uy', '.uz',
+        '.va', '.vc', '.ve', '.vg', '.vi', '.vn', '.vu', '.wf',
+        '.ws', '.ye', '.yt', '.za', '.zm', '.zw',
     );
     // }}}
 
@@ -216,11 +183,13 @@ class Validate
      *
      * @access private
      */
-    private static function __uriRFC4151($uri)
+    private static function _uriRFC4151($uri)
     {
         $datevalid = false;
         if (preg_match(
-            '/^tag:(?<name>.*),(?<date>\d{4}-?\d{0,2}-?\d{0,2}):(?<specific>.*)(.*:)*$/', $uri, $matches)) {
+            '/^tag:(?<name>.*),(?<date>\d{4}-?\d{0,2}-?\d{0,2}):(?<specific>.*)(.*:)*$/', $uri, $matches
+        )
+        ) {
             $date  = $matches['date'];
             $date6 = strtotime($date);
             if ((strlen($date) == 4) && $date <= date('Y')) {
@@ -291,11 +260,11 @@ class Validate
      *
      * @param string $string string to be converted
      *
-     * @return  string  converted string
+     * @return string  converted string
      *
-     * @access  private
+     * @access private
      */
-    private static function __stringToUtf7($string)
+    private static function _stringToUtf7($string)
     {
         $return = '';
         $utf7   = array(
@@ -325,8 +294,9 @@ class Validate
                     } else {
                         $return .= $char;
                     }
-                } elseif (($i == strlen($string) ||
-                            !((ord($char) >= 0x7F)) || (ord($char) <= 0x1F))) {
+                } elseif (($i == strlen($string)
+                    || !((ord($char) >= 0x7F)) || (ord($char) <= 0x1F))
+                ) {
                     if ($state != 1) {
                         if (ord($char) > 64) {
                             $return .= '';
@@ -373,7 +343,7 @@ class Validate
      *
      * @access private
      */
-    private static function __emailRFC822(&$email, &$options)
+    private static function _emailRFC822(&$email, &$options)
     {
         static $address   = null;
         static $uncomment = null;
@@ -420,9 +390,7 @@ class Validate
             //                 /  group                        ; named list
             $address = '/^\s*(?:' . $mailbox . '|' . $group . ')$/';
 
-            $uncomment =
-            '/((?:(?:\\\\"|[^("])*(?:' . $quoted_string .
-                                             ')?)*)((?<!\\\\)\((?:(?2)|.)*?(?<!\\\\)\))/';
+            $uncomment = '/((?:(?:\\\\"|[^("])*(?:' . $quoted_string . ')?)*)((?<!\\\\)\((?:(?2)|.)*?(?<!\\\\)\))/';
         }
         // strip comments
         $email = preg_replace($uncomment, '$1 ', $email);
@@ -445,9 +413,15 @@ class Validate
     protected static function _fullTLDValidation($email, $options)
     {
         $validate = array();
-        if(!empty($options["VALIDATE_ITLD_EMAILS"])) array_push($validate, 'itld');
-        if(!empty($options["VALIDATE_GTLD_EMAILS"])) array_push($validate, 'gtld');
-        if(!empty($options["VALIDATE_CCTLD_EMAILS"])) array_push($validate, 'cctld');
+        if (!empty($options["VALIDATE_ITLD_EMAILS"])) {
+            array_push($validate, 'itld');
+        }
+        if (!empty($options["VALIDATE_GTLD_EMAILS"])) {
+            array_push($validate, 'gtld');
+        }
+        if (!empty($options["VALIDATE_CCTLD_EMAILS"])) {
+            array_push($validate, 'cctld');
+        }
 
         if (count($validate) === 0) {
             array_push($validate, 'itld', 'gtld', 'cctld');
@@ -496,7 +470,7 @@ class Validate
     /**
      * Validate an email
      *
-     * @param string $email  email to validate
+     * @param string              $email        email to validate
      * @param mixed  boolean (BC) $check_domain Check or not if the domain exists
      *              array $options associative array of options
      *              'check_domain' boolean Check or not if the domain exists
@@ -533,7 +507,7 @@ class Validate
         $hasIDNA = false;
 
         if (Validate::_includePathFileExists('Net/IDNA.php')) {
-            include_once('Net/IDNA.php');
+            include_once 'Net/IDNA.php';
             $hasIDNA = true;
         }
 
@@ -580,8 +554,8 @@ class Validate
          $&xi';
 
         //checks if exists the domain (MX or A)
-        if ($use_rfc822? Validate::__emailRFC822($email, $options) :
-                preg_match($regex, $email)) {
+        if ($use_rfc822? Validate::_emailRFC822($email, $options) :            preg_match($regex, $email)
+        ) {
             if ($check_domain && function_exists('checkdnsrr')) {
                 $parts = explode('@', $email);
                 $domain = preg_replace('/[^-a-z.0-9]/i', '', array_pop($parts));
@@ -679,29 +653,31 @@ class Validate
         if (is_array($options)) {
             extract($options);
         }
-        if (is_array($allowed_schemes) &&
-            in_array("tag", $allowed_schemes)
+        if (is_array($allowed_schemes)
+            && in_array("tag", $allowed_schemes)
         ) {
             if (strpos($url, "tag:") === 0) {
-                return self::__uriRFC4151($url);
+                return self::_uriRFC4151($url);
             }
         }
 
         if (preg_match(
-             '&^(?:([a-z][-+.a-z0-9]*):)?                             # 1. scheme
-              (?://                                                   # authority start
-              (?:((?:%[0-9a-f]{2}|[-a-z0-9_.!~*\'();:\&=+$,])*)@)?    # 2. authority-userinfo
+            '&^(?:([a-z][-+.a-z0-9]*):)?                                         # 1. scheme
+              (?://                                                              # authority start
+              (?:((?:%[0-9a-f]{2}|[-a-z0-9_.!~*\'();:\&=+$,])*)@)?               # 2. authority-userinfo
               (?:((?:[a-z0-9](?:[-a-z0-9]*[a-z0-9])?\.)*[a-z](?:[a-z0-9]+)?\.?)  # 3. authority-hostname OR
-              |([0-9]{1,3}(?:\.[0-9]{1,3}){3}))                       # 4. authority-ipv4
-              (?::([0-9]*))?)                                        # 5. authority-port
-              ((?:/(?:%[0-9a-f]{2}|[-a-z0-9_.!~*\'():@\&=+$,;])*)*/?)? # 6. path
-              (?:\?([^#]*))?                                          # 7. query
-              (?:\#((?:%[0-9a-f]{2}|[-a-z0-9_.!~*\'();/?:@\&=+$,])*))? # 8. fragment
-              $&xi', $url, $matches)) {
+              |([0-9]{1,3}(?:\.[0-9]{1,3}){3}))                                  # 4. authority-ipv4
+              (?::([0-9]*))?)                                                    # 5. authority-port
+              ((?:/(?:%[0-9a-f]{2}|[-a-z0-9_.!~*\'():@\&=+$,;])*)*/?)?           # 6. path
+              (?:\?([^#]*))?                                                     # 7. query
+              (?:\#((?:%[0-9a-f]{2}|[-a-z0-9_.!~*\'();/?:@\&=+$,])*))?           # 8. fragment
+              $&xi', $url, $matches
+        )
+        ) {
             $scheme = isset($matches[1]) ? $matches[1] : '';
             $authority = isset($matches[3]) ? $matches[3] : '' ;
-            if (is_array($allowed_schemes) &&
-                !in_array($scheme, $allowed_schemes)
+            if (is_array($allowed_schemes)
+                && !in_array($scheme, $allowed_schemes)
             ) {
                 return false;
             }
@@ -720,7 +696,8 @@ class Validate
             if ($strict) {
                 $strict = '#[' . preg_quote($strict, '#') . ']#';
                 if ((!empty($matches[7]) && preg_match($strict, $matches[7]))
-                 || (!empty($matches[8]) && preg_match($strict, $matches[8]))) {
+                    || (!empty($matches[8]) && preg_match($strict, $matches[8]))
+                ) {
                     return false;
                 }
             }
@@ -780,11 +757,12 @@ class Validate
             $minute  = (int)$matches[7];
             isset($matches[9]) ? $second = (int)$matches[9] : $second = 0;
 
-            if ((strlen($year) != 4)        ||
-                ($day    > 31   || $day < 1)||
-                ($hour   > 23)  ||
-                ($minute > 59)  ||
-                ($second > 59)) {
+            if ((strlen($year) != 4)
+                || ($day    > 31   || $day < 1)
+                || ($hour   > 23)
+                || ($minute > 59)
+                || ($second > 59)
+            ) {
                     return false;
             }
         } else {
@@ -888,14 +866,18 @@ class Validate
 
             if ($min) {
                 include_once 'Date/Calc.php';
-                if (is_a($min, 'Date') &&
-                    (Date_Calc::compareDates($day, $month, $year,
-                        $min->getDay(), $min->getMonth(), $min->getYear()) < 0)
+                if (is_a($min, 'Date')
+                    && (Date_Calc::compareDates(
+                        $day, $month, $year,
+                        $min->getDay(), $min->getMonth(), $min->getYear()
+                    ) < 0)
                 ) {
                     return false;
-                } elseif (is_array($min) &&
-                        (Date_Calc::compareDates($day, $month, $year,
-                            $min[0], $min[1], $min[2]) < 0)
+                } elseif (is_array($min)
+                    && (Date_Calc::compareDates(
+                        $day, $month, $year,
+                        $min[0], $min[1], $min[2]
+                    ) < 0)
                 ) {
                     return false;
                 }
@@ -903,14 +885,18 @@ class Validate
 
             if ($max) {
                 include_once 'Date/Calc.php';
-                if (is_a($max, 'Date') &&
-                    (Date_Calc::compareDates($day, $month, $year,
-                        $max->getDay(), $max->getMonth(), $max->getYear()) > 0)
+                if (is_a($max, 'Date')
+                    && (Date_Calc::compareDates(
+                        $day, $month, $year,
+                        $max->getDay(), $max->getMonth(), $max->getYear()
+                    ) > 0)
                 ) {
                     return false;
-                } elseif (is_array($max) &&
-                        (Date_Calc::compareDates($day, $month, $year,
-                            $max[0], $max[1], $max[2]) > 0)
+                } elseif (is_array($max)
+                    && (Date_Calc::compareDates(
+                        $day, $month, $year,
+                        $max[0], $max[1], $max[2]
+                    ) > 0)
                 ) {
                     return false;
                 }
@@ -923,9 +909,9 @@ class Validate
     /**
      * Substr
      *
-     * @param string &$date Date
-     * @param string $num   Length
-     * @param string $opt   Unknown
+     * @param string $date Date
+     * @param string $num  Length
+     * @param string $opt  Unknown
      *
      * @access private
      * @return string
@@ -941,7 +927,16 @@ class Validate
         return $ret;
     }
 
-    function _modf($val, $div)
+    /**
+     * Calculate control digit
+     *
+     * @param int $val Value
+     * @param int $div Modulo
+     *
+     * @access protected
+     * @return int
+     */
+    private static function _modf($val, $div)
     {
         if (function_exists('bcmod')) {
             return bcmod($val, $div);
@@ -992,7 +987,7 @@ class Validate
      *
      * @access protected
      *
-     * @return  int -1 calculated control number is returned
+     * @return int -1 calculated control number is returned
      */
     protected static function _getControlNumber($number, &$weights, $modulo = 10, $subtract = 0, $allow_high = false)
     {
@@ -1007,7 +1002,7 @@ class Validate
             $mod = $subtract - $mod;
         }
         if ($allow_high === false) {
-            $mod %= 10;           // change 10 to zero
+            $mod %= 10; // change 10 to zero
         }
         return $mod;
     }
@@ -1022,7 +1017,7 @@ class Validate
      *
      * @access protected
      *
-     * @return  bool true if valid, false if not
+     * @return bool true if valid, false if not
      */
     protected static function _checkControlNumber($number, &$weights, $modulo = 10, $subtract = 0)
     {
@@ -1088,7 +1083,7 @@ class Validate
                 $valid[$var_name] = call_user_func(array('Validate', $method), $val2check, $opt);
 
                 /**
-                 * external validation method in the form:
+                 * External validation method in the form:
                  * "<class name><underscore><method name>"
                  * Ex: us_ssn will include class Validate/US.php and call method ssn()
                  */
@@ -1106,22 +1101,29 @@ class Validate
 
                 $ce = substr(phpversion(), 0, 1) > 4 ?
                     class_exists($class, false) : class_exists($class);
-                if (!$ce ||
-                    !in_array($method, get_class_methods($class))
+                if (!$ce
+                    || !in_array($method, get_class_methods($class))
                 ) {
-                    trigger_error("Invalid validation type $class::$method",
-                        E_USER_WARNING);
+                    trigger_error(
+                        "Invalid validation type $class::$method",
+                        E_USER_WARNING
+                    );
                     continue;
                 }
                 unset($opt['type']);
                 if (sizeof($opt) == 1) {
                     $opt = array_pop($opt);
                 }
-                $valid[$var_name] = call_user_func(array($class, $method),
-                    $data[$var_name], $opt);
+                $valid[$var_name] = call_user_func(
+                    array($class, $method),
+                    $data[$var_name],
+                    $opt
+                );
             } else {
-                trigger_error("Invalid validation type {$opt['type']}",
-                    E_USER_WARNING);
+                trigger_error(
+                    "Invalid validation type {$opt['type']}",
+                    E_USER_WARNING
+                );
             }
         }
         return $valid;
@@ -1147,4 +1149,3 @@ class Validate
         return false;
     }
 }
-
