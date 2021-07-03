@@ -174,6 +174,16 @@ class Validate
     );
     // }}}
 
+    private static function isMbStringAvailable()
+    {
+        static $available;
+        if (is_bool($available)) {
+            return $available;
+        }
+        $available = extension_loaded('mbstring');
+        return $available;
+    }
+
     /**
      * Validate a tag URI (RFC4151)
      *
@@ -597,12 +607,22 @@ class Validate
             return false;
         }
 
-        if ($min_length && strlen($string) < $min_length) {
-            return false;
-        }
+        if (self::isMbStringAvailable()) {
+            if ($min_length && mb_strlen($string) < $min_length) {
+                return false;
+            }
 
-        if ($max_length && strlen($string) > $max_length) {
-            return false;
+            if ($max_length && mb_strlen($string) > $max_length) {
+                return false;
+            }
+        } else {
+            if ($min_length && strlen($string) < $min_length) {
+                return false;
+            }
+
+            if ($max_length && strlen($string) > $max_length) {
+                return false;
+            }
         }
 
         return true;
