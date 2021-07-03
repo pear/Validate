@@ -45,6 +45,9 @@
             "role": "Developer"
         }
     ],
+    "require": {
+        "php": "7.3.0"
+    },
     "autoload": {
         "psr-0": {
             "Validate": "./"

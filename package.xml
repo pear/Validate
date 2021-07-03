@@ -104,7 +104,7 @@ Use correct SPDX license identifier
  <dependencies>
   <required>
    <php>
-    <min>4.2.0</min>
+    <min>7.3.0</min>
    </php>
    <pearinstaller>
     <min>1.4.0b1</min>
