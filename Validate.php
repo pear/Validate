@@ -608,11 +608,11 @@ class Validate
         }
 
         if (self::isMbStringAvailable()) {
-            if ($min_length && mb_strlen($string) < $min_length) {
+            if ($min_length && mb_strlen($string, 'UTF-8') < $min_length) {
                 return false;
             }
 
-            if ($max_length && mb_strlen($string) > $max_length) {
+            if ($max_length && mb_strlen($string, 'UTF-8') > $max_length) {
                 return false;
             }
         } else {
