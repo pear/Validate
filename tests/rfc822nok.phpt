@@ -1,7 +1,6 @@
 --TEST--
 Tests for rfc822 emails (malformed)
 --ARGS--
-2>&1 <<INVALIDS
 Just a string
 string
 (comment)
@@ -18,7 +17,6 @@ abigail@
 @example.com
 phrase: abigail@example.com abigail@example.com ;
 invalid£char@example.com
-INVALIDS
 user@yahoo..com
 --FILE--
 <?php
@@ -31,4 +29,6 @@ while (!feof($stdin)) {
     }
 }
 ?>
+done
 --EXPECT--
+done

@@ -1,9 +1,8 @@
 --TEST--
 Tests for rfc822 emails (well-formed)
 --ARGS--
-2>&1 <<VALIDS
 abigail@example.com
-abigail@example.com 
+abigail@example.com
  abigail@example.com
 abigail @example.com
 *@example.net
@@ -47,7 +46,6 @@ Cruisers:  Port@Portugal, Jones@SEA;
 \$@[]
 *()@[]
 "quoted ( brackets" ( a comment )@example.com
-VALIDS
 --FILE--
 <?php
 require 'Validate.php';
@@ -59,4 +57,6 @@ while (!feof($stdin)) {
     }
 }
 ?>
+done
 --EXPECT--
+done
