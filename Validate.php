@@ -238,7 +238,8 @@ class Validate
      */
     public static function number($number, $options = array())
     {
-        $decimal = $dec_prec = $min = $max = null;
+        $decimal = '';
+        $dec_prec = $min = $max = null;
         if (is_array($options)) {
             extract($options);
         }
